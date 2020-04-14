@@ -1,0 +1,9 @@
+C:\Users\User\source\repos\CSA_Week3_Webshop_Client\CSA_Week3_Webshop_Client\bin\Debug\CSA_Week3_Webshop_Client.exe.config
+C:\Users\User\source\repos\CSA_Week3_Webshop_Client\CSA_Week3_Webshop_Client\bin\Debug\CSA_Week3_Webshop_Client.exe
+C:\Users\User\source\repos\CSA_Week3_Webshop_Client\CSA_Week3_Webshop_Client\bin\Debug\CSA_Week3_Webshop_Client.pdb
+C:\Users\User\source\repos\CSA_Week3_Webshop_Client\CSA_Week3_Webshop_Client\obj\Debug\CSA_Week3_Webshop_Client.csprojAssemblyReference.cache
+C:\Users\User\source\repos\CSA_Week3_Webshop_Client\CSA_Week3_Webshop_Client\obj\Debug\CSA_Week3_Webshop_Client.Form1.resources
+C:\Users\User\source\repos\CSA_Week3_Webshop_Client\CSA_Week3_Webshop_Client\obj\Debug\CSA_Week3_Webshop_Client.Properties.Resources.resources
+C:\Users\User\source\repos\CSA_Week3_Webshop_Client\CSA_Week3_Webshop_Client\obj\Debug\CSA_Week3_Webshop_Client.csproj.GenerateResource.cache
+C:\Users\User\source\repos\CSA_Week3_Webshop_Client\CSA_Week3_Webshop_Client\obj\Debug\CSA_Week3_Webshop_Client.exe
+C:\Users\User\source\repos\CSA_Week3_Webshop_Client\CSA_Week3_Webshop_Client\obj\Debug\CSA_Week3_Webshop_Client.pdb

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="service" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="service/Imports">
+      <xsd:import schemaLocation="http://localhost:9000/Design_Time_Addresses/csa_week_3_webshop/CWebShop/?xsd=xsd0" namespace="service" />
+      <xsd:import schemaLocation="http://localhost:9000/Design_Time_Addresses/csa_week_3_webshop/CWebShop/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:9000/Design_Time_Addresses/csa_week_3_webshop/CWebShop/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/csa_week_3_webshop" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWebShop_GetWebShopName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebShopName" />
+  </wsdl:message>
+  <wsdl:message name="IWebShop_GetWebShopName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebShopNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebShop_GetProductList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductList" />
+  </wsdl:message>
+  <wsdl:message name="IWebShop_GetProductList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebShop_GetProductInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductInfo" />
+  </wsdl:message>
+  <wsdl:message name="IWebShop_GetProductInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebShop_BuyProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuyProduct" />
+  </wsdl:message>
+  <wsdl:message name="IWebShop_Subscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:Subscribe" />
+  </wsdl:message>
+  <wsdl:message name="IWebShop_UnSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IWebShop_UnSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebShop_NewClientConnected_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NewClientConnected" />
+  </wsdl:message>
+  <wsdl:message name="IWebShop_NewClientConnected_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NewClientConnectedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebShop_ProductSold_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ProductSold" />
+  </wsdl:message>
+  <wsdl:message name="IWebShop_ProductSold_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ProductSoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShipping_GetOrderList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderList" />
+  </wsdl:message>
+  <wsdl:message name="IShipping_GetOrderList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShipping_ShipOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShipOrder" />
+  </wsdl:message>
+  <wsdl:message name="IShipping_ShipOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShipOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShipping_SubscribeEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeEvent" />
+  </wsdl:message>
+  <wsdl:message name="IShipping_SubscribeEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShipping_UnSubscribeEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnSubscribeEvent" />
+  </wsdl:message>
+  <wsdl:message name="IShipping_UnSubscribeEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnSubscribeEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShipping_OnProductBought_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnProductBought" />
+  </wsdl:message>
+  <wsdl:portType name="IWebShop">
+    <wsdl:operation name="GetWebShopName">
+      <wsdl:input wsaw:Action="service/IWebShop/GetWebShopName" message="tns:IWebShop_GetWebShopName_InputMessage" />
+      <wsdl:output wsaw:Action="service/IWebShop/GetWebShopNameResponse" message="tns:IWebShop_GetWebShopName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <wsdl:input wsaw:Action="service/IWebShop/GetProductList" message="tns:IWebShop_GetProductList_InputMessage" />
+      <wsdl:output wsaw:Action="service/IWebShop/GetProductListResponse" message="tns:IWebShop_GetProductList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductInfo">
+      <wsdl:input wsaw:Action="service/IWebShop/GetProductInfo" message="tns:IWebShop_GetProductInfo_InputMessage" />
+      <wsdl:output wsaw:Action="service/IWebShop/GetProductInfoResponse" message="tns:IWebShop_GetProductInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuyProduct">
+      <wsdl:input wsaw:Action="service/IWebShop/BuyProduct" message="tns:IWebShop_BuyProduct_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Subscribe">
+      <wsdl:input wsaw:Action="service/IWebShop/Subscribe" message="tns:IWebShop_Subscribe_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnSubscribe">
+      <wsdl:input wsaw:Action="service/IWebShop/UnSubscribe" message="tns:IWebShop_UnSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="service/IWebShop/UnSubscribeResponse" message="tns:IWebShop_UnSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewClientConnected">
+      <wsdl:output wsaw:Action="service/IWebShop/NewClientConnected" message="tns:IWebShop_NewClientConnected_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="service/IWebShop/NewClientConnectedResponse" message="tns:IWebShop_NewClientConnected_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductSold">
+      <wsdl:output wsaw:Action="service/IWebShop/ProductSold" message="tns:IWebShop_ProductSold_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="service/IWebShop/ProductSoldResponse" message="tns:IWebShop_ProductSold_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IShipping">
+    <wsdl:operation name="GetOrderList">
+      <wsdl:input wsaw:Action="service/IShipping/GetOrderList" message="tns:IShipping_GetOrderList_InputMessage" />
+      <wsdl:output wsaw:Action="service/IShipping/GetOrderListResponse" message="tns:IShipping_GetOrderList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ShipOrder">
+      <wsdl:input wsaw:Action="service/IShipping/ShipOrder" message="tns:IShipping_ShipOrder_InputMessage" />
+      <wsdl:output wsaw:Action="service/IShipping/ShipOrderResponse" message="tns:IShipping_ShipOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeEvent">
+      <wsdl:input wsaw:Action="service/IShipping/SubscribeEvent" message="tns:IShipping_SubscribeEvent_InputMessage" />
+      <wsdl:output wsaw:Action="service/IShipping/SubscribeEventResponse" message="tns:IShipping_SubscribeEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnSubscribeEvent">
+      <wsdl:input wsaw:Action="service/IShipping/UnSubscribeEvent" message="tns:IShipping_UnSubscribeEvent_InputMessage" />
+      <wsdl:output wsaw:Action="service/IShipping/UnSubscribeEventResponse" message="tns:IShipping_UnSubscribeEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnProductBought">
+      <wsdl:output wsaw:Action="service/IShipping/OnProductBought" message="tns:IShipping_OnProductBought_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
